@@ -51,6 +51,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
