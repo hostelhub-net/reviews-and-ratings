@@ -5,6 +5,8 @@ const app = express();
 
 const Review = require('../database/Review.js');
 
+const router = express.Router();
+
 app.use('./netlify/functions/server', router);
 app.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
