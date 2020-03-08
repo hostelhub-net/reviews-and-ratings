@@ -60,5 +60,6 @@ typings/
 # next.js build output
 .next
 
-# secret files
-database/config.js
+# production
+/build
+/lambda
