@@ -24,8 +24,8 @@
     "server-dev": "nodemon server/index.js",
     "seedDB": "node database/seed.js",
     "test": "jest",
-    "build": "webpack -d",
-    "start": "node server/index.js"
+    "build": "webpack -d && netlify-lambda build express",
+    "start": "node server-local.js"
   },
   "dependencies": {
     "@babel/core": "^7.4.0",
@@ -47,6 +47,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.6",
+    "serverless-http": "^2.3.2",
     "styled-components": "^4.2.0",
     "styled-icons": "^7.9.0",
     "webpack": "^4.29.6",
@@ -62,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.5.0",
+    "netlify-lambda": "^1.6.3",
     "webpack-cli": "^3.3.0"
   }
 }

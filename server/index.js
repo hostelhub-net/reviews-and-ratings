@@ -1,10 +1,11 @@
 const express = require('express');
+const serverless = require('serverless-http');
 
 const app = express();
-const port = 3003;
 
 const Review = require('../database/Review.js');
 
+app.use('./netlify/functions/server', router);
 app.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/hostels/:_id/reviews', (req, res) => {
@@ -15,5 +16,5 @@ app.get('/api/hostels/:_id/reviews', (req, res) => {
     });
 });
 
-
-app.listen(port, () => console.log(`Server is listening on port ${port}`));
+module.exports = app;
+module.exports.handler = serverless(app);
