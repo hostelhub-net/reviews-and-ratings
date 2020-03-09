@@ -7,7 +7,7 @@ const Review = require('../database/Review.js');
 
 const router = express.Router();
 
-app.use('./netlify/functions/server', router);
+app.use('./netlify/functions/server/hostels/:hostelId', router);
 app.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/hostels/:_id/reviews', (req, res) => {
