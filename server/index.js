@@ -7,8 +7,7 @@ const Review = require('../database/Review.js');
 
 const router = express.Router();
 
-app.use('./netlify/functions/server/hostels/:hostelId', router);
-app.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
+router.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/hostels/:_id/reviews', (req, res) => {
   Review.find(req.params)
@@ -17,6 +16,10 @@ app.get('/api/hostels/:_id/reviews', (req, res) => {
       res.send(reviews);
     });
 });
+
+app.use('/.netlify/functions/server', router);
+
+
 
 module.exports = app;
 module.exports.handler = serverless(app);

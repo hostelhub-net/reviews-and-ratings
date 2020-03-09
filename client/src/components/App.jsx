@@ -21,7 +21,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const self = this;
-    const id = window.location.pathname.split('/')[2];
+    const id = window.location.pathname.split('/')[5];
 
     $.ajax({
       method: 'GET',

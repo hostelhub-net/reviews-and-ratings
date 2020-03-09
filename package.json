@@ -25,7 +25,7 @@
     "seedDB": "node database/seed.js",
     "test": "jest",
     "build": "webpack -d && netlify-lambda build server",
-    "start": "node server-local.js"
+    "start": "node server-local.js && netlify-lamba serve functions"
   },
   "dependencies": {
     "@babel/core": "^7.4.0",
