@@ -11,8 +11,7 @@ router.get('/', (req, res) => {
   res.send(`<p>Hello world</p>`);
 });
 
-router.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
-router.get('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
+router.use('/index/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/hostels/:_id/reviews', (req, res) => {
   Review.find(req.params)
