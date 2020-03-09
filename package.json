@@ -24,7 +24,7 @@
     "server-dev": "nodemon server/index.js",
     "seedDB": "node database/seed.js",
     "test": "jest",
-    "build": "webpack -d && netlify-lambda build database",
+    "build": "webpack -d && netlify-lambda build server",
     "start": "node server-local.js"
   },
   "dependencies": {
