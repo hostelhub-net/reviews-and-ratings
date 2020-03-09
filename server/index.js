@@ -7,7 +7,10 @@ const Review = require('../database/Review.js');
 
 const router = express.Router();
 
-router.use('/', express.static(`${__dirname}/../client/dist`));
+router.get('/', (req, res) => {
+  res.send(`<p>Hello world</p>`);
+});
+router.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/hostels/:_id/reviews', (req, res) => {
   Review.find(req.params)
@@ -17,7 +20,7 @@ app.get('/api/hostels/:_id/reviews', (req, res) => {
     });
 });
 
-app.use('/.netlify/functions/index/hostels/:hostelId', router);
+app.use('/.netlify/functions/index/', router);
 
 
 
