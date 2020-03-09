@@ -1645,7 +1645,7 @@ const S=function(e){console.warn("WARNING: The `useMongoClient` option is no lon
 /*!
  * Module exports.
  */
-_.STATES=a,e.exports=_},function(e,t,n){(function(t){var o=n(282),i=n(359),r=o(),s=n(371),a=o.Router();a.use("/hostels/:hostelId",o.static("".concat(t,"/../client/dist"))),r.get("/api/hostels/:_id/reviews",(function(e,t){s.find(e.params).exec((function(e,n){if(e)throw e;t.send(n)}))})),r.use("/.netlify/functions/server",a),e.exports=r,e.exports.handler=i(r)}).call(this,"/")},function(e,t,n){"use strict";
+_.STATES=a,e.exports=_},function(e,t,n){(function(t){var o=n(282),i=n(359),r=o(),s=n(371),a=o.Router();a.use("/hostels/:hostelId",o.static("".concat(t,"/../client/dist"))),r.get("/api/hostels/:_id/reviews",(function(e,t){s.find(e.params).exec((function(e,n){if(e)throw e;t.send(n)}))})),r.use("/.netlify/functions/index",a),e.exports=r,e.exports.handler=i(r)}).call(this,"/")},function(e,t,n){"use strict";
 /*!
  * express
  * Copyright(c) 2009-2013 TJ Holowaychuk

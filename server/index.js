@@ -17,7 +17,7 @@ app.get('/api/hostels/:_id/reviews', (req, res) => {
     });
 });
 
-app.use('/.netlify/functions/server', router);
+app.use('/.netlify/functions/index', router);
 
 
 
