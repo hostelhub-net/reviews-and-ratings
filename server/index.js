@@ -7,11 +7,9 @@ const Review = require('../database/Review.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send(`<p>Hello world</p>`);
+router.use('/', (req, res) => {
+  res.send('Hostels can be searched by adding /hostels/:hostelId to the end of the URL.');
 });
-
-router.use('/', express.static(`${__dirname}/../client/dist`));
 router.use('/hostels/:hostelId', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/hostels/:_id/reviews', (req, res) => {
@@ -23,8 +21,6 @@ app.get('/api/hostels/:_id/reviews', (req, res) => {
 });
 
 app.use('/.netlify/functions/index/', router);
-
-
 
 module.exports = app;
 module.exports.handler = serverless(app);
